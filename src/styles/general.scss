@@ -1,0 +1,18 @@
+@import './colors';
+
+html, body {
+  height: 100%;
+  margin: 0;
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  background-color: $bg-secondary;
+  color: $text-primary;
+}

@@ -1,0 +1,40 @@
+<div class="header">
+  <div class="header-logo">
+    <img [src]="'assets/logo.png'" alt="logo" width="200" height="32" />
+
+    <img [src]="'assets/cross.png'" alt="logo" width="16" height="16" />
+
+    <img [src]="'assets/fictional-logo.png'" alt="fictional logo" width="97" height="32" />
+  </div>
+
+  <div class="header-actions">
+    <button class="help-button" (click)="callHelp()">
+      <img [src]="'assets/help-circle.png'" alt="help button" width="16" height="16" />
+
+      <span>Help</span>
+    </button>
+
+    <div *ngIf="(dataService.data$ | async) as crewMember" class="avatar-container">
+      <div class="image-container">
+        <img
+          *ngIf="crewMember.image"
+          [src]="crewMember.image"
+          alt="Crew member image small"
+          class="personal-image"
+        />
+      </div>
+
+      <span>{{ dataService.crewMemberFirstName + dataService.crewMemberLastName }}</span>
+    </div>
+  </div>
+</div>
+
+<!--<nav class="navbar">-->
+<!--  <ul>-->
+<!--    <li><a routerLink="/profile/1">Profile</a></li>-->
+
+<!--    <li><a routerLink="/starlink-stats">Starlink Stats</a></li>-->
+
+<!--    <li><a routerLink="/starlink/1">Starlink Details</a></li>-->
+<!--  </ul>-->
+<!--</nav>-->

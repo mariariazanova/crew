@@ -1,0 +1,142 @@
+<div *ngIf="loading" class="loader">Loading...</div>
+
+<div *ngIf="!loading && (dataService.data$ | async) as crewMember">
+  <div class="wrapper">
+    <div class="inner-wrapper">
+      <h3 class="profile-title">Your profile, {{ dataService.crewMemberFirstName }}</h3>
+
+      <div class="block image-block">
+        <div class="image-wrapper">
+          <img
+            *ngIf="crewMember.image"
+            [src]="crewMember.image"
+            alt="Crew member image"
+            class="personal-image"
+          />
+
+          <div *ngIf="!crewMember.image">
+            <p>No profile image available.</p>
+          </div>
+        </div>
+
+        <div class="image-actions">
+          <h4 class="image-block-title">Profile image</h4>
+
+          <div class="image-actions-wrapper">
+            <button class="replace-button" (click)="triggerFileInput()">Replace</button>
+
+            <button class="remove-button" (click)="removeImage()">Remove</button>
+
+            <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none" />
+          </div>
+        </div>
+      </div>
+
+      <div class="block status-block">
+        <div>
+          <p class="status-label">Status</p>
+
+          <p class="status-button">{{ crewMember.status }}</p>
+        </div>
+
+        <div>
+          <p class="status-label">Launches</p>
+
+          <div class="launches-info">
+            <img [src]="'assets/rocket-02.png'" alt="rocket icon" width="24" height="24" />
+
+            <p>{{ crewMember.launches.length }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="block details-block">
+        <div class="details-block-wrapper">
+          <div class="title">
+            <h4 class="details-block-title">Your details</h4>
+
+            <img [src]="'assets/edit-05.png'" alt="edit icon" width="20" height="20" />
+          </div>
+
+          <div class="personal-info">
+            <div class="personal-info-column">
+              <p>First name</p>
+
+              <p>Las name</p>
+
+              <p>Email</p>
+
+              <p>Phone number</p>
+            </div>
+
+            <div class="personal-info-column personal-info-column-data">
+              <p>{{ dataService.crewMemberFirstName }}</p>
+
+              <p>{{ dataService.crewMemberLastName }}</p>
+
+              <p>NA</p>
+
+              <p>NA</p>
+            </div>
+          </div>
+
+          <div class="personal-info personal-info-additional">
+            <div class="personal-info-column">
+              <p>Agency</p>
+
+              <p>ID</p>
+
+              <p>Social</p>
+            </div>
+
+            <div class="personal-info-column personal-info-column-data">
+              <p>{{ crewMember.agency }}</p>
+
+              <p>{{ crewMember.id }}</p>
+
+              <img [src]="'assets/w-vector.png'" alt="wikipedia icon" width="20" height="12.9" />
+              <a [href]="crewMember.wikipedia" target="_blank" rel="noopener noreferrer">{{ 'wikipedia page' }}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="upcoming-title">Upcoming launches</h4>
+
+        <div class="block upcoming-block">
+          <p class="upcoming-launch-title">{{ upcomingLaunchesDefault.name }}</p>
+
+          <p class="upcoming-launch-step">Step: {{ upcomingLaunchesDefault.step }}</p>
+
+          <p class="progress-bar-container">
+            <span class="progress-bar" [style.width.%]="upcomingLaunchesDefault.progress"></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="block help-block">
+        <div>
+          <p class="help-title">Help us improve!</p>
+
+          <p class="help-content">Please fill in this short survey to do so</p>
+        </div>
+
+
+<!--        <div class="help-survey">-->
+
+
+          <button class="survey-button" (click)="triggerFileInput()">Yes, I'll help out</button>
+<!--        </div>-->
+
+<!--        <p class="help-title">Help us improve!</p>-->
+
+<!--        <div class="help-survey">-->
+<!--          <p class="">Please fill in this short survey to do so</p>-->
+
+<!--          <button class="survey-button" (click)="triggerFileInput()">Yes, I'll help out</button>-->
+<!--        </div>-->
+      </div>
+    </div>
+  </div>
+</div>

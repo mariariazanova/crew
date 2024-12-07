@@ -1,0 +1,8 @@
+@import '../styles/fonts';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-6xl;
+  padding-bottom: $spacing-10xl;
+}
