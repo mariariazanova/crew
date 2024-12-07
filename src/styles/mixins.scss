@@ -45,8 +45,22 @@
   font-weight: $fw-bold;
 }
 
+@mixin display-xs-semibold {
+  font-family: $font-family-body;
+  font-size: $display-xs;
+  font-weight: $fw-semi-bold;
+  line-height: $line-height-display-xs;
+}
+
 @mixin display-in-row {
   display: flex;
   justify-content: space-between;
+}
+
+@mixin truncated-text {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 

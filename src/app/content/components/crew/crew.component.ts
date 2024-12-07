@@ -14,14 +14,14 @@ export class CrewComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    // this.http.get(`https://api.spacexdata.com/v4/crew`).pipe(untilDestroyed(this)).subscribe(data => {
-    //   console.log(data);
-    //   this.crewMembers = data;
-    //   console.log(this.crewMembers);
-    // //   {
-    // //   next: (data) => (this.crewMembers = data),
-    // //   error: (err) => console.error(err),
-    // }
-    // );
+    this.http.get(`https://api.spacexdata.com/v4/crew`).pipe(untilDestroyed(this)).subscribe(data => {
+      console.log(data);
+      this.crewMembers = data;
+      console.log(this.crewMembers);
+    //   {
+    //   next: (data) => (this.crewMembers = data),
+    //   error: (err) => console.error(err),
+    }
+    );
   }
 }

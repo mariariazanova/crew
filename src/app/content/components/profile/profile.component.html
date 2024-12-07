@@ -1,5 +1,9 @@
 <div *ngIf="loading" class="loader">Loading...</div>
 
+<!--<h2>StarLink Stats</h2>-->
+
+<!--<a [routerLink]="'/starlink-stats'">StarLink Stats</a>-->
+
 <div *ngIf="!loading && (dataService.data$ | async) as crewMember">
   <div class="wrapper">
     <div class="inner-wrapper">

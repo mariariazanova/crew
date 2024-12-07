@@ -1,1 +1,17 @@
-<p>starlink-stats works!</p>
+<div class="lists-container" class="lists">
+  <div *ngFor="let list of lists; let index = index" class="list">
+    <div>
+      <h3>List-{{ index + 1 }}</h3>
+
+      <div *ngFor="let starlink of list" class="list-item">
+        <p>id: {{ starlink.id }}</p>
+
+        <p>creation date: {{ starlink.creationDate | dateFormat }}</p>
+
+        <p>country code: {{ starlink.countryCode }}</p>
+
+        <p>height (km): {{ starlink.height_km }}</p>
+      </div>
+    </div>
+  </div>
+</div>

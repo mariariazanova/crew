@@ -15,4 +15,7 @@ import { ContentModule } from './content/content.module';
 })
 export class AppComponent {
   title = 'crew-app';
+  constructor() {
+    console.log('Crew App');
+  }
 }

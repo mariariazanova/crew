@@ -131,7 +131,8 @@ img.personal-image {
     @include text-md-bold;
 
     display: flex;
-    gap: $spacing-2xl;
+    justify-content: space-evenly;
+    gap: $spacing-md;
   }
 }
 
@@ -292,4 +293,72 @@ img.personal-image {
   //    @include text-sm-semibold;
   //  }
   //}
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: auto;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .profile-title, .details-block-title {
+    @include display-xs-semibold;
+
+    margin-top: 0;
+    margin-bottom: $spacing-xl;
+  }
+
+  .block {
+    margin: 0 0 $spacing-xl;
+  }
+
+  .image-block {
+    flex-direction: column;
+    //margin: 0 0 $spacing-xl;
+
+    .image-wrapper {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .image-actions-wrapper {
+      padding: 0 $spacing-3xl $spacing-2xl;
+    }
+  }
+
+  .details-block {
+    padding: 0;
+
+    //&-column {
+    //  @include text-sm-semibold;
+    //}
+
+    .personal-info {
+      gap: $spacing-md;
+
+      &-column-data p,
+      &-column-data a {
+        @include truncated-text;
+
+        //color: $text-secondary;
+      }
+    }
+  }
+
+  .upcoming-title {
+    margin-left: 0;
+  }
+
+  .help-block {
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+    gap: $spacing-xl;
+
+    .help-title {
+      margin-bottom: $spacing-xl;
+    }
+  }
 }

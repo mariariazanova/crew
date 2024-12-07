@@ -6,9 +6,10 @@ import {StarlinkDetailsComponent} from './components/starlink-details/starlink-d
 import { provideHttpClient } from '@angular/common/http';
 import {CrewComponent} from './components/crew/crew.component';
 import {RouterLink} from '@angular/router';
+import {DateFormatPipe} from './pipes/date-format.pipe';
 
 @NgModule({
-  declarations: [CrewComponent, ProfileComponent, StarlinkStatsComponent, StarlinkDetailsComponent],
+  declarations: [CrewComponent, ProfileComponent, StarlinkStatsComponent, StarlinkDetailsComponent, DateFormatPipe],
   imports: [CommonModule, RouterLink, NgOptimizedImage],
   providers: [provideHttpClient()]
 })

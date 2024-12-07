@@ -6,3 +6,10 @@
   gap: $spacing-6xl;
   padding-bottom: $spacing-10xl;
 }
+
+@media (max-width: 768px) {
+  :host {
+    gap: $spacing-sm;
+    padding-bottom: $spacing-2xl;
+  }
+}

@@ -53,6 +53,7 @@ export class DataService {
         this.data$.next(data);
         this.getCrewMemberName(data);
       }),
+      untilDestroyed(this),
       // shareReplay(1), // Ensures the request is cached and shared
     ).subscribe();
 

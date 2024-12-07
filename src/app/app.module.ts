@@ -5,14 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import {ContentModule} from './content/content.module';
 import {NgModule} from '@angular/core';
 import {BannerComponent} from './banner/banner.component';
+import {LayoutComponent} from './layout/layout.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LayoutComponent, BannerComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     ContentModule,
-    BannerComponent,
+    AppRoutingModule,
+    // LayoutComponent,
+    // BannerComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
