@@ -1,0 +1,62 @@
+@import './fonts';
+
+@mixin text-sm-regular {
+  font-family: $font-family-regular;
+  font-size: $text-sm;
+  font-weight: $fw-normal;
+  line-height: $line-height-text-sm;
+}
+
+@mixin text-sm-semibold {
+  font-family: $font-family-body;
+  font-size: $text-sm;
+  font-weight: $fw-semi-bold;
+  line-height: $line-height-text-sm;
+}
+
+@mixin text-md-semibold {
+  font-family: $font-family-body;
+  font-size: $text-md;
+  font-weight: $fw-semi-bold;
+  line-height: $line-height-text-lg;
+}
+
+@mixin text-lg-semibold {
+  font-family: $font-family-body;
+  font-size: $text-lg;
+  font-weight: $fw-semi-bold;
+  line-height: $line-height-text-lg;
+}
+
+@mixin text-xl-semibold {
+  @include text-sm-semibold;
+
+  font-family: $font-family-regular;
+  font-size: $text-super-lg;
+  line-height: 30px;
+}
+
+@mixin text-md-bold {
+  @include text-md-semibold;
+
+  font-weight: $fw-bold;
+}
+
+@mixin display-xs-semibold {
+  font-family: $font-family-body;
+  font-size: $display-xs;
+  font-weight: $fw-semi-bold;
+  line-height: $line-height-display-xs;
+}
+
+@mixin display-in-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin truncated-text {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

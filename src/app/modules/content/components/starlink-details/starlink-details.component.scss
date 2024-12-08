@@ -1,0 +1,13 @@
+@import '../../../../../styles/fonts';
+@import '../../../../../styles/colors';
+
+.container {
+  padding: $spacing-2xl $spacing-6xl;
+  border: 1px solid $border-secondary;
+  border-radius: $radius-xl;
+  margin: $spacing-2xl;
+}
+
+h3 {
+  text-align: center;
+}

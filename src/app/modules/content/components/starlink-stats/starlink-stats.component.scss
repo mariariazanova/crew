@@ -1,0 +1,34 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/fonts';
+@import '../../../../../styles/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.lists-container {
+  display: flex;
+  justify-content: space-between;
+  padding: $spacing-2xl $spacing-6xl;
+  gap: $spacing-lg;
+}
+
+h3 {
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+
+  .list-item {
+    padding: $spacing-lg;
+    margin: $spacing-lg auto;
+    background-color: $bg-secondary;
+    border-radius: $radius-md;
+    border: 1px solid $border-secondary;
+    box-shadow: $shadow-lg;
+    cursor: pointer;
+  }
+}
