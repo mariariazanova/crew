@@ -7,7 +7,7 @@ import eslintParser from '@typescript-eslint/parser';
 /** @type {Linter.FlatConfig[]} */
 const config = [
   {
-    ignores: ['node_modules', 'dist', 'package-lock.json', '.angular'],
+    ignores: ['node_modules', 'dist', 'package-lock.json', '.angular/cache'],
     files: ['**/*.ts'],
     plugins: {
       '@typescript-eslint': typescriptPlugin,

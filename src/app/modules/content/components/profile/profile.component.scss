@@ -120,14 +120,14 @@
   .title {
     @include display-in-row;
 
-    border-bottom: 1px solid $fg-senary;
+    border-bottom: 1px solid $fg-secondary;
   }
 
   .personal-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $spacing-9xl;
-    border-bottom: 1px solid $fg-senary;
+    border-bottom: 1px solid $fg-secondary;
 
     &.personal-info-additional {
       border-bottom: none;
@@ -181,7 +181,7 @@
   .progress-bar {
     display: block;
     height: 100%;
-    background-color: $fg-brand-primary;
+    background-color: $fg-primary;
     border-radius: 10px;
   }
 }
@@ -220,7 +220,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .wrapper {
     width: auto;
     border: none;
