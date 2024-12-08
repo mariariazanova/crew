@@ -1,0 +1,282 @@
+@import '../../../../../styles/colors';
+@import '../../../../../styles/fonts';
+@import '../../../../../styles/mixins';
+
+.wrapper {
+  width: $lg;
+  margin: 0 auto;
+  border-radius: $radius-md;
+  border: 1px solid $border-secondary;
+  background-color: $alpha-white-100;
+  padding: $spacing-6xl $spacing-4xl;
+  box-shadow: $shadow-lg;
+}
+
+.inner-wrapper {
+  padding: 16px $spacing-2xl;
+}
+
+.block {
+  display: flex;
+  border: 1px solid $border-secondary;
+  border-radius: $radius-xl;
+  margin: $spacing-2xl;
+}
+
+.image-block {
+  .image-wrapper {
+    width: 220px;
+    height: 148px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  img.personal-image {
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .image-actions {
+    width: 100%;
+  }
+
+  .image-block-title {
+    @include text-md-semibold;
+
+    margin: 0;
+    padding: $spacing-2xl $spacing-3xl;
+  }
+
+  .image-actions-wrapper {
+    display: flex;
+    padding: $spacing-2xl $spacing-3xl;
+    gap: $spacing-lg;
+
+    button {
+      width: 86px;
+
+      &.replace-button {
+        border: 1px solid $button-primary-border;
+        background-color: $button-primary-bg;
+        color: $button-primary-fg;
+      }
+
+      &.remove-button {
+        border: 1px solid $button-secondary-border;
+        background-color: $button-secondary-bg;
+        color: $button-secondary-fg;
+      }
+    }
+  }
+}
+
+.status-block {
+  justify-content: space-around;
+  padding: $spacing-2xl $spacing-3xl;
+
+  @include text-sm-semibold;
+
+  p {
+    margin: 0;
+  }
+
+  .status-label {
+    margin-bottom: $spacing-2xl;
+    text-align: center;
+  }
+
+  .launches-info {
+    @include text-md-bold;
+
+    display: flex;
+    justify-content: space-evenly;
+    gap: $spacing-md;
+  }
+
+  .status-button {
+    display: inline-block;
+    padding: $spacing-xxs 10px;
+    background-color: $utility-success-50;
+    border: 1px solid $utility-success-200;
+    color: $utility-success-700;
+    border-radius: 9999px;
+    text-align: center;
+    cursor: pointer;
+  }
+}
+
+.details-block {
+  border: none;
+  background-color: $bg-secondary;
+  padding: $spacing-3xl;
+
+  &-wrapper {
+    padding: $spacing-xl;
+  }
+
+  .title {
+    @include display-in-row;
+
+    border-bottom: 1px solid $fg-senary;
+  }
+
+  .personal-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-9xl;
+    border-bottom: 1px solid $fg-senary;
+
+    &.personal-info-additional {
+      border-bottom: none;
+    }
+
+    &-column {
+      @include text-sm-semibold;
+    }
+
+    &-column-data {
+      @include text-sm-regular;
+
+      color: $text-secondary;
+    }
+  }
+}
+
+.upcoming-title {
+  @include text-xl-semibold;
+
+  margin-left: $spacing-2xl;
+  margin-bottom: $spacing-xl;
+}
+
+.upcoming-block {
+  flex-direction: column;
+  padding: $spacing-3xl;
+
+  .upcoming-launch-title {
+    @include text-md-semibold;
+
+    margin: 0;
+  }
+
+  .upcoming-launch-step {
+    @include text-sm-regular;
+
+    color: $text-secondary;
+    margin-top: 0;
+  }
+
+  .progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: $bg-quaternary;
+    border-radius: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
+  .progress-bar {
+    display: block;
+    height: 100%;;
+    background-color: $fg-brand-primary;
+    border-radius: 10px;
+  }
+}
+
+.help-block {
+  justify-content: space-between;
+  align-items: end;
+  padding: $spacing-3xl;
+  border: none;
+  background-color: $bg-secondary;
+
+  .help-title {
+    @include text-md-semibold;
+
+    color: $text-brand-secondary;
+    margin-top: 0;
+    margin-bottom: $spacing-2xl;
+  }
+
+  .help-content {
+    @include text-sm-regular;
+
+    margin: 0;
+  }
+
+  button.survey-button {
+    height: 36px;
+    border-radius: $radius-md;
+    padding: $spacing-md $spacing-xl;
+    border: 1px solid $button-secondary-border;
+    background-color: $button-secondary-bg;
+    color: $button-secondary-fg;
+    box-shadow: $shadow-xs;
+
+    @include text-sm-semibold;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: auto;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .profile-title, .details-block-title {
+    @include display-xs-semibold;
+
+    margin-top: 0;
+    margin-bottom: $spacing-xl;
+  }
+
+  .block {
+    margin: 0 0 $spacing-xl;
+  }
+
+  .image-block {
+    flex-direction: column;
+
+    .image-wrapper {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .image-actions-wrapper {
+      padding: 0 $spacing-3xl $spacing-2xl;
+    }
+  }
+
+  .details-block {
+    padding: 0;
+
+    .personal-info {
+      gap: $spacing-md;
+
+      &-column-data p,
+      &-column-data a {
+        @include truncated-text;
+      }
+    }
+  }
+
+  .upcoming-title {
+    margin-left: 0;
+  }
+
+  .help-block {
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+    gap: $spacing-xl;
+
+    .help-title {
+      margin-bottom: $spacing-xl;
+    }
+  }
+}

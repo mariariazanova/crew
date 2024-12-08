@@ -1,0 +1,94 @@
+@import '../../../styles/colors';
+@import '../../../styles/fonts';
+@import '../../../styles/mixins';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 0 $spacing-8xl;
+
+  .header-logo {
+    display: flex;
+    gap: $spacing-xs;
+  }
+
+  .small-logo, .menu {
+    display: none;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+  }
+
+  .help-button {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    border-radius: $radius-md;
+    border: 1px solid $button-secondary-border;
+    background-color: $button-secondary-bg;
+    color: $button-secondary-fg;
+    padding: $spacing-md $spacing-lg;
+    box-shadow: $shadow-xs;
+    cursor: pointer;
+
+    @include text-md-semibold;
+
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.avatar-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  @include text-sm-semibold;
+}
+
+.image-container {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .header {
+    height: 72px;
+    padding-left: $spacing-xl;
+    padding-right: $spacing-lg;
+    background-color: $alpha-white-100;
+
+    div.header-actions {
+      display: none;
+    }
+
+    img.menu {
+      display: block;
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .header-logo .small-logo {
+    display: block;
+  }
+}

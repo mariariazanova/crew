@@ -2,19 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import {ContentModule} from './content/content.module';
+import {ContentModule} from './modules/content/content.module';
 import {NgModule} from '@angular/core';
-import {BannerComponent} from './banner/banner.component';
-import {LayoutComponent} from './layout/layout.component';
+import {BannerComponent} from './components/banner/banner.component';
 
 @NgModule({
-  declarations: [AppComponent, LayoutComponent, BannerComponent],
+  declarations: [AppComponent, BannerComponent],
   imports: [
     BrowserModule,
     ContentModule,
     AppRoutingModule,
-    // LayoutComponent,
-    // BannerComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
