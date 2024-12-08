@@ -6,14 +6,14 @@ import {StarlinkDetailsComponent} from './content/components/starlink-details/st
 import {CrewComponent} from './content/components/crew/crew.component';
 import {LayoutComponent} from './layout/layout.component';
 
-const predefinedIds = ['5ebf1a6e23a9a60006e03a7a',
-  '5ebf1b7323a9a60006e03a7b',
-  '5f7f1543bf32c864a529b23e',
-  '5f7f158bbf32c864a529b23f',
-  '5f7f15d5bf32c864a529b240'];
-const randomId = predefinedIds[Math.floor(Math.random() * predefinedIds.length)];
-
-console.log(randomId);
+// const predefinedIds = ['5ebf1a6e23a9a60006e03a7a',
+//   '5ebf1b7323a9a60006e03a7b',
+//   '5f7f1543bf32c864a529b23e',
+//   '5f7f158bbf32c864a529b23f',
+//   '5f7f15d5bf32c864a529b240'];
+// const randomId = predefinedIds[Math.floor(Math.random() * predefinedIds.length)];
+//
+// console.log(randomId);
 
 const subRoutes = [
   { path: '', component: CrewComponent },
@@ -31,7 +31,7 @@ const routes: Routes = [
   // { path: '', children: [...subRoutes] },
   { path: 'profile/:id', component: ProfileComponent },
   { path: 'starlink-stats', component: StarlinkStatsComponent },
-  // { path: 'starlink/:id', component: StarlinkDetailsComponent },
+  { path: 'starlink-stats/:id', component: StarlinkDetailsComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
   // { path: '**', redirectTo: `/profile/${randomId}` },
   // { path: '', redirectTo: '/starlink-stats', pathMatch: 'full' }

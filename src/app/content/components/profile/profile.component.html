@@ -1,10 +1,6 @@
-<div *ngIf="loading" class="loader">Loading...</div>
+<div *ngIf="dataService.loading" class="loader">Loading...</div>
 
-<!--<h2>StarLink Stats</h2>-->
-
-<!--<a [routerLink]="'/starlink-stats'">StarLink Stats</a>-->
-
-<div *ngIf="!loading && (dataService.data$ | async) as crewMember">
+<div *ngIf="!dataService.loading && (dataService.data$ | async) as crewMember">
   <div class="wrapper">
     <div class="inner-wrapper">
       <h3 class="profile-title">Your profile, {{ dataService.crewMemberFirstName }}</h3>
@@ -57,7 +53,7 @@
       <div class="block details-block">
         <div class="details-block-wrapper">
           <div class="title">
-            <h4 class="details-block-title">Your details</h4>
+            <h3 class="details-block-title">Your details</h3>
 
             <img [src]="'assets/edit-05.png'" alt="edit icon" width="20" height="20" />
           </div>
@@ -142,5 +138,15 @@
 <!--        </div>-->
       </div>
     </div>
+  </div>
+</div>
+
+<div class="navigation">
+  <div>
+    <a [routerLink]="'/'">Leave Profile</a>
+  </div>
+
+  <div>
+    <a [routerLink]="'/starlink-stats'">StarLink Stats</a>
   </div>
 </div>

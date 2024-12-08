@@ -1,1 +1,43 @@
-<p>starlink-details works!</p>
+<div *ngIf="loading" class="loader">Loading...</div>
+
+<div *ngIf="!loading">
+  <div *ngIf="!areNoDetails; else noDate">
+    <h3>Star Link Details</h3>
+
+    <div *ngIf="starLinkDetails" class="container">
+      <div>
+        <p>launch status: {{ starLinkDetails.success }}</p>
+
+        <p>launch details: {{ starLinkDetails.details }}</p>
+
+        <p>launch date: {{ starLinkDetails.date_utc | dateFormat }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="totalPayloadMass" class="container">
+      <p>total payloads mass: {{ totalPayloadMass }}</p>
+    </div>
+
+    <div *ngIf="coreMessage" class="container">
+      <p>1st core message: {{ coreMessage }}</p>
+    </div>
+  </div>
+
+  <ng-template #noDate class="no-data">
+    <p>No data available</p>
+  </ng-template>
+</div>
+
+<div class="navigation">
+  <div *ngIf="crewMemberId">
+    <a [routerLink]="['/profile', crewMemberId]">Profile</a>
+  </div>
+
+  <div>
+    <a [routerLink]="'/'">Leave Profile</a>
+  </div>
+
+  <div>
+    <a [routerLink]="'/starlink-stats'">StarLink Stats</a>
+  </div>
+</div>

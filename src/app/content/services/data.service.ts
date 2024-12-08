@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import {ActivatedRoute} from '@angular/router';
 import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
 import {CrewMember} from '../../interfaces/crew-member';
+import {CREW_MEMBER_URl} from '../constants/urls';
 
 @UntilDestroy()
 @Injectable({
@@ -47,11 +48,13 @@ export class DataService {
     //     this.loading = false;
     //   },
     // });
-    this.http.get<CrewMember>(`https://api.spacexdata.com/v4/crew/${id}`).pipe(
+    this.http.get<CrewMember>(`${CREW_MEMBER_URl}/${id}`).pipe(
       tap((data: CrewMember) => {
         console.log(data);
         this.data$.next(data);
         this.getCrewMemberName(data);
+        console.log('set loader to false');
+        this.loading = false;
       }),
       untilDestroyed(this),
       // shareReplay(1), // Ensures the request is cached and shared

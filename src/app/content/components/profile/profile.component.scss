@@ -2,13 +2,6 @@
 @import '../../../../styles/fonts';
 @import '../../../../styles/mixins';
 
-.loader {
-  font-size: 1.5em;
-  color: #007bff;
-  text-align: center;
-  margin-top: 20px;
-}
-
 .wrapper {
   width: $lg;
   //width: 40%; /* Adjust as needed for large margins */
@@ -24,11 +17,11 @@
     //0px 12px 12px -4px rgba(16, 24, 40, 0.08);
 }
 
-.profile-title, .details-block-title {
-  @include text-lg-semibold;
-
-  margin-top: 0;
-}
+//.profile-title, .details-block-title {
+//  @include text-lg-semibold;
+//
+//  margin-top: 0;
+//}
 
 .inner-wrapper {
   //margin-left: auto;
@@ -90,12 +83,12 @@ img.personal-image {
 
   button {
     width: 86px;
-    height: 36px;
-    border-radius: $radius-md;
-    padding: $spacing-md $spacing-lg;
-    box-shadow: $shadow-xs;
-
-    @include text-sm-semibold;
+    //height: 36px;
+    //border-radius: $radius-md;
+    //padding: $spacing-md $spacing-lg;
+    //box-shadow: $shadow-xs;
+    //
+    //@include text-sm-semibold;
 
     &.replace-button {
       border: 1px solid $button-primary-border;

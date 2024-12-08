@@ -7,6 +7,7 @@ export interface StarLink {
   id: string,
   spaceTrack: SpaceTrack,
   height_km: number,
+  launch: string,
 }
 
 export interface StarLinkListItem {
@@ -14,4 +15,5 @@ export interface StarLinkListItem {
   creationDate: string,
   countryCode: string,
   height_km: number,
+  launch: string,
 }

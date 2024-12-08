@@ -1,7 +1,11 @@
-<h2>Crew Members</h2>
+<!--<h2>Crew Members</h2>-->
 
-<ul>
-  <li *ngFor="let member of crewMembers">
-    <a [routerLink]="['/profile', member.id]">{{ member.id }}</a>
-  </li>
-</ul>
+<!--<ul>-->
+<!--  <li *ngFor="let member of crewMembers">-->
+<!--    <a [routerLink]="['/profile', member.id]">{{ member.id }}</a>-->
+<!--  </li>-->
+<!--</ul>-->
+<div class="button-container">
+  <button (click)="navigateToProfile()">Go to Profile</button>
+</div>
+

@@ -1,0 +1,10 @@
+@import '../../../../styles/colors';
+
+.button-container {
+  text-align: center;
+
+  button:active {
+    color: $button-primary-fg;
+    background-color: $button-primary-bg;
+  }
+}

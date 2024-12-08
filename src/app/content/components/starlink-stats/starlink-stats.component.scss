@@ -2,11 +2,16 @@
 @import '../../../../styles/fonts';
 @import '../../../../styles/mixins';
 
-.lists {
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.lists-container {
   display: flex;
   justify-content: space-between;
   padding: $spacing-2xl $spacing-6xl;
-  //gap: $spacing-lg;
+  gap: $spacing-lg;
 }
 
 h3 {
@@ -24,6 +29,6 @@ h3 {
     border-radius: $radius-md;
     border: 1px solid $border-secondary;
     box-shadow: $shadow-lg;
-    cursor: text;
+    cursor: pointer;
   }
 }

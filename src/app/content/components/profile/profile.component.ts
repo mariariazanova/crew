@@ -29,7 +29,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.route);
 
-
+    this.dataService.data$.subscribe(res => console.log(res));
     this.getData();
 
 
@@ -82,7 +82,9 @@ export class ProfileComponent implements OnInit {
 
     this.crewMemberFirstName = this.dataService.crewMemberFirstName;
     this.crewMemberLastName = this.dataService.crewMemberLastName;
+    console.log(1, this.dataService.data$.getValue());
     this.loading = false;
+    // !this.dataService.data$.getValue() && (this.loading = false);
   }
 
   // getCrewMemberName(): void {

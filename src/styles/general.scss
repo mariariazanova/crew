@@ -1,4 +1,6 @@
 @import './colors';
+@import './fonts';
+@import './mixins';
 
 html, body {
   height: 100%;
@@ -15,6 +17,47 @@ body {
   line-height: 1.5;
   background-color: $bg-secondary;
   color: $text-primary;
+}
+
+.loader {
+  font-size: 1.5em;
+  color: #007bff;
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  //width: 86px;
+  height: 36px;
+  border-radius: $radius-md;
+  padding: $spacing-md $spacing-lg;
+  box-shadow: $shadow-xs;
+  border: 1px solid $button-secondary-border;
+  background-color: $button-secondary-bg;
+  color: $button-secondary-fg;
+  cursor: pointer;
+
+  @include text-sm-semibold;
+}
+
+h3 {
+  @include text-lg-semibold;
+
+  margin-top: 0;
+}
+
+.no-data {
+  @include text-sm-regular;
+
+  text-align: center;
+  margin: 0 auto;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-around;
+  margin: $spacing-xl auto;
+  width: 300px;
 }
 
 @media (max-width: 768px) {
