@@ -16,12 +16,7 @@
       height="32"
     />
 
-    <img
-      [src]="'assets/cross.png'"
-      alt="logo"
-      width="16"
-      height="16"
-    />
+    <img [src]="'assets/cross.png'" alt="logo" width="16" height="16" />
 
     <img
       [src]="'assets/fictional-logo.png'"
@@ -33,12 +28,20 @@
 
   <div class="header-actions">
     <button class="help-button" (click)="callHelp()">
-      <img [src]="'assets/help-circle.png'" alt="help button" width="16" height="16" />
+      <img
+        [src]="'assets/help-circle.png'"
+        alt="help button"
+        width="16"
+        height="16"
+      />
 
       <span>Help</span>
     </button>
 
-    <div *ngIf="(dataService.data$ | async) as crewMember" class="avatar-container">
+    <div
+      *ngIf="dataService.data$ | async as crewMember"
+      class="avatar-container"
+    >
       <div class="image-container">
         <img
           *ngIf="crewMember.image"
@@ -48,7 +51,9 @@
         />
       </div>
 
-      <span>{{ dataService.crewMemberFirstName + ' ' + dataService.crewMemberLastName }}</span>
+      <span>{{
+        dataService.crewMemberFirstName + ' ' + dataService.crewMemberLastName
+      }}</span>
     </div>
   </div>
 

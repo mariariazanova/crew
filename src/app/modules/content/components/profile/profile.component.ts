@@ -1,25 +1,26 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {UntilDestroy, untilDestroyed} from '@ngneat/until-destroy';
-import {DataService} from '../../services/data.service';
-import {CrewMember} from '../../../../interfaces/crew-member';
-import {ID} from '../../../../constants/paths';
-import {upcomingLaunchesData} from '../../../../mocks/upcoming-launches-data';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from '../../services/data.service';
+import { CrewMember } from '../../../../interfaces/crew-member';
+import { ID } from '../../../../constants/paths';
+import { upcomingLaunchesData } from '../../../../mocks/upcoming-launches-data';
 
-@UntilDestroy()
 @Component({
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss'
+  styleUrl: './profile.component.scss',
 })
 export class ProfileComponent implements OnInit {
   loading = true;
-  crewMemberFirstName: string | undefined = undefined;
-  crewMemberLastName: string | undefined = undefined;
+  crewMemberFirstName: string | null = null;
+  crewMemberLastName: string | null = null;
   upcomingLaunchesDefault = upcomingLaunchesData;
 
   @ViewChild('fileInput') fileInput!: ElementRef;
 
-  constructor(public dataService: DataService, private route: ActivatedRoute) {}
+  constructor(
+    public dataService: DataService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.getData();

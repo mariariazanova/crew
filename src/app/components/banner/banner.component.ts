@@ -1,5 +1,5 @@
-import { Component} from '@angular/core';
-import {DataService} from '../../modules/content/services/data.service';
+import { Component } from '@angular/core';
+import { DataService } from '../../modules/content/services/data.service';
 
 @Component({
   selector: 'app-banner',
@@ -7,8 +7,8 @@ import {DataService} from '../../modules/content/services/data.service';
   styleUrl: './banner.component.scss',
 })
 export class BannerComponent {
-  crewMemberFirstName: string | undefined = undefined;
-  crewMemberLastName: string | undefined = undefined;
+  crewMemberFirstName: string | null = null;
+  crewMemberLastName: string | null = null;
 
   constructor(public dataService: DataService) {
     this.crewMemberFirstName = this.dataService.crewMemberFirstName;

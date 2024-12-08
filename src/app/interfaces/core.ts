@@ -1,7 +1,7 @@
 export interface Core {
-  core: string,
+  core: string;
 }
 
 export interface CoreDetail {
-  last_update: string,
+  last_update: string;
 }

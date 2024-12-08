@@ -180,7 +180,7 @@
 
   .progress-bar {
     display: block;
-    height: 100%;;
+    height: 100%;
     background-color: $fg-brand-primary;
     border-radius: 10px;
   }
@@ -228,7 +228,8 @@
     box-shadow: none;
   }
 
-  .profile-title, .details-block-title {
+  .profile-title,
+  .details-block-title {
     @include display-xs-semibold;
 
     margin-top: 0;

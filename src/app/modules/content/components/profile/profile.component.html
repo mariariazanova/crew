@@ -1,10 +1,12 @@
 <div *ngIf="dataService.loading" class="loader">Loading...</div>
 
 <div *ngIf="!dataService.loading">
-  <div *ngIf="(dataService.data$ | async) as crewMember; else noData">
+  <div *ngIf="dataService.data$ | async as crewMember; else noData">
     <div class="wrapper">
       <div class="inner-wrapper">
-        <h3 class="profile-title">Your profile, {{ dataService.crewMemberFirstName }}</h3>
+        <h3 class="profile-title">
+          Your profile, {{ dataService.crewMemberFirstName }}
+        </h3>
 
         <div class="block image-block">
           <div class="image-wrapper">
@@ -24,11 +26,20 @@
             <h4 class="image-block-title">Profile image</h4>
 
             <div class="image-actions-wrapper">
-              <button class="replace-button" (click)="triggerFileInput()">Replace</button>
+              <button class="replace-button" (click)="triggerFileInput()">
+                Replace
+              </button>
 
-              <button class="remove-button" (click)="removeImage()">Remove</button>
+              <button class="remove-button" (click)="removeImage()">
+                Remove
+              </button>
 
-              <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none" />
+              <input
+                type="file"
+                #fileInput
+                (change)="onFileSelected($event)"
+                style="display: none"
+              />
             </div>
           </div>
         </div>
@@ -44,7 +55,12 @@
             <p class="status-label">Launches</p>
 
             <div class="launches-info">
-              <img [src]="'assets/rocket-02.png'" alt="rocket icon" width="24" height="24" />
+              <img
+                [src]="'assets/rocket-02.png'"
+                alt="rocket icon"
+                width="24"
+                height="24"
+              />
 
               <p>{{ crewMember.launches.length }}</p>
             </div>
@@ -56,7 +72,12 @@
             <div class="title">
               <h3 class="details-block-title">Your details</h3>
 
-              <img [src]="'assets/edit-05.png'" alt="edit icon" width="20" height="20" />
+              <img
+                [src]="'assets/edit-05.png'"
+                alt="edit icon"
+                width="20"
+                height="20"
+              />
             </div>
 
             <div class="personal-info">
@@ -95,9 +116,19 @@
 
                 <p>{{ crewMember.id }}</p>
 
-                <img [src]="'assets/w-vector.png'" alt="wikipedia icon" width="20" height="12.9" />
+                <img
+                  [src]="'assets/w-vector.png'"
+                  alt="wikipedia icon"
+                  width="20"
+                  height="12.9"
+                />
 
-                <a [href]="crewMember.wikipedia" target="_blank" rel="noopener noreferrer">{{ 'wikipedia page' }}</a>
+                <a
+                  [href]="crewMember.wikipedia"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >{{ 'wikipedia page' }}</a
+                >
               </div>
             </div>
           </div>
@@ -107,12 +138,19 @@
           <h4 class="upcoming-title">Upcoming launches</h4>
 
           <div class="block upcoming-block">
-            <p class="upcoming-launch-title">{{ upcomingLaunchesDefault.name }}</p>
+            <p class="upcoming-launch-title">
+              {{ upcomingLaunchesDefault.name }}
+            </p>
 
-            <p class="upcoming-launch-step">Step: {{ upcomingLaunchesDefault.step }}</p>
+            <p class="upcoming-launch-step">
+              Step: {{ upcomingLaunchesDefault.step }}
+            </p>
 
             <p class="progress-bar-container">
-              <span class="progress-bar" [style.width.%]="upcomingLaunchesDefault.progress"></span>
+              <span
+                class="progress-bar"
+                [style.width.%]="upcomingLaunchesDefault.progress"
+              ></span>
             </p>
           </div>
         </div>
@@ -121,10 +159,14 @@
           <div>
             <p class="help-title">Help us improve!</p>
 
-            <p class="help-content">Please fill in this short survey to do so</p>
+            <p class="help-content">
+              Please fill in this short survey to do so
+            </p>
           </div>
 
-          <button class="survey-button" (click)="triggerFileInput()">Yes, I'll help out</button>
+          <button class="survey-button" (click)="triggerFileInput()">
+            Yes, I'll help out
+          </button>
         </div>
       </div>
     </div>

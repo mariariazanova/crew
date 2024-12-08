@@ -8,7 +8,11 @@
       <div>
         <h3>List {{ index + 1 }}</h3>
 
-        <div *ngFor="let starlink of list" class="list-item" [routerLink]="['/starlink-stats', starlink.launch]">
+        <div
+          *ngFor="let starlink of list"
+          class="list-item"
+          [routerLink]="['/starlink-stats', starlink.launch]"
+        >
           <p>id: {{ starlink.id }}</p>
 
           <p>creation date: {{ starlink.creationDate | dateFormat }}</p>

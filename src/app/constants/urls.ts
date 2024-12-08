@@ -1,4 +1,4 @@
-import {CORES, CREW, LAUNCHES, PAYLOADS, STARLINK} from './paths';
+import { CORES, CREW, LAUNCHES, PAYLOADS, STARLINK } from './paths';
 
 const API_URL = 'https://api.spacexdata.com/v4';
 

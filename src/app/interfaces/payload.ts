@@ -1,3 +1,3 @@
 export interface Payload {
-  mass_kg: number,
+  mass_kg: number;
 }
